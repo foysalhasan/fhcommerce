@@ -1,13 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.post__border {
+  animation: borderColorChanger 20s ease-in-out infinite alternate-reverse both;
+}
+.text__color {
+  animation: textColorChanger 20s ease-in-out infinite alternate-reverse both;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ql-container {
+  height: 80% !important;
+}
+@keyframes borderColorChanger {
+  0% {
+    @apply border-fuchsia-600;
+  }
+  20% {
+    @apply border-emerald-600;
+  }
+  40% {
+    @apply border-orange-600;
+  }
+  60% {
+    @apply border-indigo-600;
+  }
+  80% {
+    @apply border-rose-600;
+  }
+  100% {
+    @apply border-violet-700;
+  }
+}
+
+@keyframes textColorChanger {
+  0% {
+    @apply text-fuchsia-600;
+  }
+  20% {
+    @apply text-emerald-600;
+  }
+  40% {
+    @apply text-orange-600;
+  }
+  60% {
+    @apply text-indigo-600;
+  }
+  80% {
+    @apply text-rose-600;
+  }
+  100% {
+    @apply text-violet-700;
+  }
+}
+
+.img__anim {
+  @apply transform relative scale-125;
+
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  animation: imgAnim 3s infinite linear alternate-reverse;
+  /* animation-timing-function: */
+}
+
+@keyframes imgAnim {
+  0% {
+    @apply top-3 left-3;
+  }
+  50% {
+    @apply top-0 left-0;
+  }
+  100% {
+    @apply -top-3 -left-3;
+  }
 }
